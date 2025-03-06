@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "da0c39d3-9bd5-4b1e-9afe-ecbb442c3fa4",
+		"name": "Drone Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34336340"
+	},
+	"item": [
+		{
+			"name": "Register Drone",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serialNumber\": \"DRONE123\",\r\n    \"model\": \"LIGHTWEIGHT\",\r\n    \"weightLimit\": 500,\r\n    \"batteryCapacity\": 100,\r\n    \"state\": \"IDLE\",\r\n    \"medications\": []\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/drones/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"drones",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Available Drones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/drones/available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"drones",
+						"available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Drone Battery Level",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/drones/DRONE123/battery",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"drones",
+						"DRONE123",
+						"battery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Drone Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/drones/DRONE123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"drones",
+						"DRONE123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load Medications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Paracetamol\",\r\n        \"weight\": 100,\r\n        \"code\": \"PCM001\",\r\n        \"image\": \"base64encodedimage\"\r\n    }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/medications/load/DRONE123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"medications",
+						"load",
+						"DRONE123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Loaded Medications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/medications/DRONE123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"medications",
+						"DRONE123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medications by Drone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/medications/drone/DRONE123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"medications",
+						"drone",
+						"DRONE123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
